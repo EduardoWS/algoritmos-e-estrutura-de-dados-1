@@ -31,9 +31,8 @@ typedef struct {
 int inicializar(t_lista *l);
 int inserir(t_elemento e, t_lista *l);
 int remover(t_chave chave, t_lista *l);
-t_elemento pesquisar(t_chave chave, t_lista *l);
+int pesquisar(t_chave chave, t_lista *l);
 int vazia(t_lista *l);
-int cheia(t_lista *l);
 void imprimir(t_lista *l);
 
 #endif

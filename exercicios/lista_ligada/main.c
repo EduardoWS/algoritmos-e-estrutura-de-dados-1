@@ -21,5 +21,10 @@ int main(){
 
 	imprimir(&l);
 
+	remover(10, &l);
+	imprimir(&l);
+
+	pesquisar(50, &l);
+
 	return 0;
 }
