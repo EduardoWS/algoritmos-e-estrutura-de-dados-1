@@ -10,6 +10,8 @@ int main(){
     insereFinal(7, &f);
     insereFinal(8, &f);
 
+    
+
     return 0;
 
 }

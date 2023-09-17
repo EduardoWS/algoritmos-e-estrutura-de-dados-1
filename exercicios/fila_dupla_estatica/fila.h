@@ -22,8 +22,8 @@ typedef struct{
 int inicializar(t_fila *f);
 int insereInicio(int v, t_fila *f);
 int insereFinal(int v, t_fila *f);
-int removeInicio(int v, t_fila *f);
-int removeFinal(int v, t_fila *f);
+int removeInicio(t_fila *f);
+int removeFinal(t_fila *f);
 int vazia(t_fila *f);
 void inicio(t_fila *f);
 void final(t_fila *f);
