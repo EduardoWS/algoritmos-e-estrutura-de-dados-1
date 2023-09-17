@@ -18,7 +18,14 @@ int insereInicio(int v, t_fila *f)
         return SUCESSO;
     }
 
-    if(f->final == (f->inicio + 1)%MAX){
+    //if(f->final == (f->inicio - 1)%MAX){
+    if(f->inicio - 1 == -1){
+        if(f->final == MAX -1){
+            printf("Lista cheia!\n");
+            return CHEIA;
+        }
+    }
+    if(f->final == (f->inicio - 1)%MAX){
         printf("Lista cheia!\n");
         return CHEIA;
     }
@@ -106,11 +113,35 @@ int vazia(t_fila *f)
 {
     if (f->inicio == -1 && f->final==-1)
     {
+        printf("Esta vazia!!!\n");
+        return 1;
+    }
+
+    printf("Nao esta vazia!!!\n");
+    return 0;
+}
+
+int cheia(t_fila *f)
+{
+    if(f->inicio == (f->final + 1)%MAX){
+        printf("Lista cheia!!\n");
+        return 1;
+    }
+    if(f->inicio - 1 == -1){
+        if(f->final == MAX -1){
+            printf("Lista cheia!\n");
+            return 1;
+        }
+    }
+    if(f->final == (f->inicio - 1)%MAX){
+        printf("Lista cheia!\n");
         return 1;
     }
 
     return 0;
+
 }
+
 void inicio(t_fila *f)
 {
     if(f->inicio == -1){
@@ -118,6 +149,7 @@ void inicio(t_fila *f)
     }
     else{
         printf("Inicio: %d\n", f->fila[f->inicio]);
+        printf("Index: %d\n", f->inicio);
     }
 }
 void final(t_fila *f)
@@ -127,5 +159,6 @@ void final(t_fila *f)
     }
     else{
         printf("Final: %d\n", f->fila[f->final]);
+        printf("Index: %d\n", f->final);
     }
 }
