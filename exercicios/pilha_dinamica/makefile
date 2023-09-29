@@ -1,13 +1,18 @@
-CC = gcc
-CFLAGS = -Wall
-programa = main
+EXECUTAVEL = main
 
-main: main.c pilha.c pilha.h
-	$(CC) $(CFLAGS) -o $(programa) main.c pilha.c
+all:
+	@gcc *.c -o $(EXECUTAVEL)
 
 clean:
-	rm $(programa)
+	@rm -f $(EXECUTAVEL)
 
-exec:
-	$(CC) $(CFLAGS) -o $(programa) main.c pilha.c
-	./$(programa)
+fsanitize:
+	@gcc -g -fsanitize=address,undefined *.c -o $(EXECUTAVEL)
+	@./$(EXECUTAVEL)
+
+valgrind:
+	@gcc -g *.c -o $(EXECUTAVEL)
+	@valgrind --leak-check=full ./$(EXECUTAVEL)
+
+run: all
+	@./$(EXECUTAVEL)

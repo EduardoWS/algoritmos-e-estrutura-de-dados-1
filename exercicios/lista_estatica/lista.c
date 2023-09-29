@@ -1,27 +1,6 @@
 #include <stdio.h>
 #include "lista.h"
 
-/*
-#define SUCESSO 1
-#define NAO_EXISTE -1
-#define JA_EXISTE -2
-#define INVALIDO -3
-#define CHEIA -4
-#define VAZIA -5
-
-typedef int t_chave;
-typedef struct {
-	t_chave chave;
-	char nome[50];
-	//qqer outra coisa
-} t_elemento;
-
-typedef struct {
-	int ultimo;
-	t_elemento lista[MAX];
-} t_lista;
-
-*/
 
 int inicializar(t_lista *l){
 	l->ultimo = -1;
